@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Zarzoso Beauty Studio | Estética en Zaragoza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-nude: #f4ece6;
+            --accent-gold: #c5a059;
+            --dark-text: #333333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-nude { background-color: var(--primary-nude); }
+        .text-gold { color: var(--accent-gold); }
+        .bg-gold { background-color: var(--accent-gold); }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .legal-section { display: none; }
+        .active-page { display: block; }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 cursor-pointer" onclick="showPage('home')">
+                    <span class="text-2xl font-serif font-bold text-gold">SARA ZARZOSO</span>
+                    <p class="text-[10px] tracking-[0.2em] uppercase text-gray-500">Beauty Studio</p>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" onclick="showPage('home')" class="nav-link">Inicio</a>
+                    <a href="#servicios" onclick="showPage('home')" class="nav-link">Servicios</a>
+                    <a href="#contacto" onclick="showPage('home')" class="nav-link">Contacto</a>
+                    <button onclick="window.open('tel:+34641009727')" class="bg-gold text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">Pedir Cita</button>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-4 space-y-4">
+            <a href="#home" onclick="showPage('home')" class="block text-gray-700">Inicio</a>
+            <a href="#servicios" onclick="showPage('home')" class="block text-gray-700">Servicios</a>
+            <a href="#contacto" onclick="showPage('home')" class="block text-gray-700">Contacto</a>
+            <a href="tel:+34641009727" class="block text-gold font-bold">Llamar Ahora</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        
+        <!-- Sección Inicio -->
+        <section id="home-page" class="active-page">
+            
+            <!-- Hero -->
+            <section id="home" class="pt-32 pb-20 bg-nude">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="flex items-center space-x-2 text-gold">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-sm text-gray-600 ml-2">5.0 (48 reseñas)</span>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-serif text-gray-900 leading-tight">Tu belleza en manos expertas.</h1>
+                        <p class="text-lg text-gray-600 max-w-md">Especialistas en resaltar tu esencia natural en el corazón de Zaragoza. Bienvenida a tu momento de bienestar.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://wa.me/34641009727" class="bg-gold text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition flex items-center">
+                                <i class="fab fa-whatsapp mr-2"></i> Reservar Cita
+                            </a>
+                            <a href="#servicios" class="border border-gold text-gold px-8 py-4 rounded-full font-semibold hover:bg-gold hover:text-white transition">Ver Servicios</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 mt-12 md:mt-0 relative">
+                        <div class="w-full h-[500px] bg-gray-300 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
+                            <img src="https://img.freepik.com/foto-gratis/cosmetologo-aplicando-mascara-cara-cliente-salon-belleza_1303-16778.jpg?semt=ais_hybrid&w=740&q=80" alt="Interior del centro de estética" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl hidden md:block">
+                            <p class="font-serif text-2xl text-gold italic">"Resultados que enamoran"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Barra de Información -->
+            <div class="bg-white py-12 border-b">
+                <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-map-marker-alt text-2xl text-gold mb-4"></i>
+                        <h3 class="font-bold">Ubicación</h3>
+                        <p class="text-gray-500">Cl. del Monasterio de Samos, 36, Zaragoza</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-clock text-2xl text-gold mb-4"></i>
+                        <h3 class="font-bold">Horario</h3>
+                        <p class="text-gray-500">Abierto hasta las 19:00</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-heart text-2xl text-gold mb-4"></i>
+                        <h3 class="font-bold">Valores</h3>
+                        <p class="text-gray-500">Espacio Amigable LGBTQ+</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicios -->
+            <section id="servicios" class="py-24">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-serif mb-4">Nuestros Tratamientos</h2>
+                        <div class="w-24 h-1 bg-gold mx-auto"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <!-- Servicio 1 -->
+                        <div class="service-card bg-nude p-8 rounded-2xl border border-transparent hover:border-gold text-center">
+                            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto text-4xl">
+                                ✨
+                            </div>
+                            <h3 class="text-2xl font-serif mb-3">Estética Facial</h3>
+                            <p class="text-gray-600 mb-6">Limpiezas profundas, hidratación y tratamientos anti-edad personalizados para tu tipo de piel.</p>
+                            <span class="text-gold font-bold">Desde 45€</span>
+                        </div>
+                        <!-- Servicio 2 -->
+                        <div class="service-card bg-nude p-8 rounded-2xl border border-transparent hover:border-gold text-center">
+                            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto text-4xl">
+                                👁️
+                            </div>
+                            <h3 class="text-2xl font-serif mb-3">Mirada & Cejas</h3>
+                            <p class="text-gray-600 mb-6">Diseño de cejas, laminado y lifting de pestañas para potenciar la expresión de tus ojos.</p>
+                            <span class="text-gold font-bold">Desde 15€</span>
+                        </div>
+                        <!-- Servicio 3 -->
+                        <div class="service-card bg-nude p-8 rounded-2xl border border-transparent hover:border-gold text-center">
+                            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto text-4xl">
+                                💅
+                            </div>
+                            <h3 class="text-2xl font-serif mb-3">Manicura & Pedicura</h3>
+                            <p class="text-gray-600 mb-6">Cuidado integral de manos y pies con esmaltados de larga duración y diseños exclusivos.</p>
+                            <span class="text-gold font-bold">Desde 20€</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonios -->
+            <section class="bg-gray-50 py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-serif mb-12">Lo que dicen nuestras clientas</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-sm italic">
+                            <p class="mb-4">"El mejor centro de Zaragoza. Sara es una profesional increíble y el trato es inmejorable. Salgo siempre encantada."</p>
+                            <span class="font-bold text-gold">- Marta R.</span>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-sm italic">
+                            <p class="mb-4">"Un lugar donde relajarse de verdad. La atención al detalle y la limpieza son de 10. Muy recomendado."</p>
+                            <span class="font-bold text-gold">- Elena G.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacto & Mapa -->
+            <section id="contacto" class="py-24">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex flex-col md:flex-row gap-16">
+                        <div class="md:w-1/2 space-y-8">
+                            <h2 class="text-4xl font-serif">Ven a visitarnos</h2>
+                            <p class="text-gray-600 text-lg">Estamos en el barrio de Las Fuentes, listos para cuidarte. Reserva tu cita por teléfono o WhatsApp.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-nude rounded-full flex items-center justify-center text-gold">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-400">Llámanos</p>
+                                        <p class="font-bold">641 00 97 27</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-nude rounded-full flex items-center justify-center text-gold">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-400">Ubicación</p>
+                                        <p class="font-bold">Cl. del Monasterio de Samos, 36, 50013 Zaragoza</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 rounded-3xl overflow-hidden shadow-xl">
+                            <div class="map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.474661706509!2d-0.8655!3d41.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914ed00000001%3A0x0!2zNDHCsDM4JzI0LjAiTiAwwrA1MSc1NS44Ilc!5e0!3m2!1ses!2ses!4v1625123456789!5m2!1ses!2ses" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGINAS LEGALES -->
+        
+        <section id="aviso-legal" class="legal-section pt-32 pb-20 px-4 max-w-4xl mx-auto">
+            <h1 class="text-3xl font-serif mb-8">Aviso Legal</h1>
+            <div class="prose text-gray-600 space-y-4">
+                <p><strong>1. Datos Identificativos</strong></p>
+                <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, el titular es Sara Zarzoso con domicilio en Cl. del Monasterio de Samos, 36, 50013 Zaragoza.</p>
+                <p><strong>2. Usuarios</strong></p>
+                <p>El acceso al portal atribuye la condición de USUARIO, aceptando las Condiciones Generales de Uso.</p>
+            </div>
+            <button onclick="showPage('home')" class="mt-8 text-gold font-bold">← Volver al inicio</button>
+        </section>
+
+        <section id="privacidad" class="legal-section pt-32 pb-20 px-4 max-w-4xl mx-auto">
+            <h1 class="text-3xl font-serif mb-8">Política de Privacidad</h1>
+            <div class="prose text-gray-600 space-y-4">
+                <p><strong>Responsable:</strong> Sara Zarzoso</p>
+                <p><strong>Finalidad:</strong> Gestión de citas y consultas. Sus datos personales serán tratados siguiendo el RGPD.</p>
+            </div>
+            <button onclick="showPage('home')" class="mt-8 text-gold font-bold">← Volver al inicio</button>
+        </section>
+
+        <section id="cookies" class="legal-section pt-32 pb-20 px-4 max-w-4xl mx-auto">
+            <h1 class="text-3xl font-serif mb-8">Política de Cookies</h1>
+            <div class="prose text-gray-600 space-y-4">
+                <p>Este sitio utiliza cookies técnicas y analíticas para mejorar la navegación del usuario. Usted puede configurar su navegador para rechazarlas.</p>
+            </div>
+            <button onclick="showPage('home')" class="mt-8 text-gold font-bold">← Volver al inicio</button>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-2xl font-serif font-bold text-gold">SARA ZARZOSO</span>
+                    <p class="mt-4 text-gray-400 max-w-sm">Cuidado personal y estética avanzada en el corazón de Zaragoza.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Explora</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" onclick="showPage('home')" class="hover:text-gold transition">Inicio</a></li>
+                        <li><a href="#servicios" onclick="showPage('home')" class="hover:text-gold transition">Servicios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><button onclick="showPage('aviso-legal')" class="hover:text-gold transition text-left">Aviso Legal</button></li>
+                        <li><button onclick="showPage('privacidad')" class="hover:text-gold transition text-left">Privacidad</button></li>
+                        <li><button onclick="showPage('cookies')" class="hover:text-gold transition text-left">Cookies</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Sara Zarzoso Beauty Studio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/34641009727" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white border-t p-4 shadow-2xl z-[60] flex flex-col md:flex-row items-center justify-between">
+        <p class="text-sm text-gray-600 mb-4 md:mb-0">Utilizamos cookies para mejorar su experiencia. <button onclick="showPage('cookies')" class="underline">Más información</button></p>
+        <div class="space-x-4">
+            <button onclick="closeCookies()" class="bg-gold text-white px-6 py-2 rounded text-sm font-bold">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('section.active-page, section.legal-section').forEach(section => {
+                section.classList.remove('active-page');
+                section.style.display = 'none';
+            });
+
+            if(pageId === 'home') {
+                const home = document.getElementById('home-page');
+                home.classList.add('active-page');
+                home.style.display = 'block';
+            } else {
+                const page = document.getElementById(pageId);
+                page.classList.add('active-page');
+                page.style.display = 'block';
+            }
+            window.scrollTo(0, 0);
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        function closeCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
